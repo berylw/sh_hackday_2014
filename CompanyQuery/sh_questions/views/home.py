@@ -12,4 +12,5 @@ def home(request, request_query=''):
     return render(request, 'home.html',
         {
         'question': question,
+        'vote': '',
         })
