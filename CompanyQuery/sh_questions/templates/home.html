@@ -1,63 +1,54 @@
+<!DOCTYPE html>
 <html>
+{% load staticfiles %}
 <head>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="jquery-1.11.1.min.js"></script>
 <script type="text/javascript">
 $(function() {
-   setInterval(ajaxFunction, 1000);
+   setInterval(ajaxFunction, 2000);
 });
 var ajaxFunction = function() {
     $.ajax({
        type: "GET",
        url: "/question/reload/",
        success: function(result) {
-       	 $('.question').replaceWith($(result).filter('question'))
+       	 $('html').html($(result));
        }
    });
 };
 </script>
 <style>
+*{text-align: center;}
 .question {
     font-weight: bold;
     font-size: 64px;
-    color: #4a4341;
-    height: 100%;
-    width: 400px;
+    color: #fff;
+    background-color: #4a4341;
+    height: 100px;
+    width: 800px;
     clear: left;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Helvetica;
+    padding-top: 3%;
+    padding-bottom: 3%;
 }
-.one {
-
+.container {
+    height: 2000px;
+    background-color:#4a4341;
 }
-.two {
-
-}
-.three {
-
-}
-.four {
-
-}
-.five {
-
-}
-.six {
-
-}
-.seven {
-
-}
-.eight {
-
-}
-.nine {
-
+.img {
+    margin-left: auto;
+    margin-left: auto;
 }
 </style>
 </head>
+<div class="container">
 <div class="question">
 {{ question }}
 </div>
 <div class="img">
-<img src='{{ img }}'>
+<img src='{% static img %}' alt="My img"/>
+</div>
 </div>
 </html>

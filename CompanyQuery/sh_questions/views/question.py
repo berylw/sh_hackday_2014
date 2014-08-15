@@ -24,5 +24,7 @@ def question(request, request_query=''):
     return render(request, 'home.html',
         {
         'question': question,
-        'vote': '',
+        'yes': 0,
+        'no' : 0,
+        'img': '5.png',
         })

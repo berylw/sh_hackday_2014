@@ -41,7 +41,7 @@ def vote(request, vote=''):
     print 'no: ' + str(no_votes)
     return render(request, 'home.html', {
           'question':question,
-          'yes': yes,
-          'no': no,
           'img':img,
+          'yes': yes_votes,
+          'no': no_votes,
           })
