@@ -59,7 +59,7 @@ WSGI_APPLICATION = 'CompanyQuery.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, '..', 'question.db'),
+        'NAME': os.path.join(BASE_DIR, 'question.db'),
     }
 }
 
@@ -81,3 +81,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+IMG_DICT = {
+    '1':'one.png',
+    '2':'two.png',
+    '3':'three.png',
+    '4':'four.png',
+    '5': 'five.png',
+    '6': 'six.png',
+    '7': 'seven.png',
+    '8': 'eight.png',
+    '9': 'nine.png',
+}

@@ -1,14 +1,63 @@
 <html>
 <head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+   setInterval(ajaxFunction, 1000);
+});
+var ajaxFunction = function() {
+    $.ajax({
+       type: "GET",
+       url: "/question/reload/",
+       success: function(result) {
+       	 $('.question').replaceWith($(result).filter('question'))
+       }
+   });
+};
+</script>
 <style>
 .question {
     font-weight: bold;
     font-size: 64px;
+    color: #4a4341;
+    height: 100%;
+    width: 400px;
+    clear: left;
+}
+.one {
+
+}
+.two {
+
+}
+.three {
+
+}
+.four {
+
+}
+.five {
+
+}
+.six {
+
+}
+.seven {
+
+}
+.eight {
+
+}
+.nine {
+
 }
 </style>
 </head>
 <div class="question">
 {{ question }}
-{{ include "vote.html" }}
+</div>
+<div class="img">
+<img src='{{ img }}'>
 </div>
 </html>

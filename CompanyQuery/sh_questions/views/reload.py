@@ -7,7 +7,8 @@ from django.template import RequestContext
 from django.db import models
 from sh_questions.models import Questions
 
-def vote(request, vote=''):
+def reload(request, vote=''):
+    import pdb; pdb.set_trace()
     question = ''
     no_votes = 0
     yes_votes = 0
